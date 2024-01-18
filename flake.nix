@@ -7,7 +7,7 @@
 
   outputs = { self, nixpkgs }: let
 
-   mkCleverHans = pkgs: pkgs.python3Packages.buildPythonPackage rec {
+   mkCleverHans = pkgs: pkgs.python310Packages.buildPythonPackage rec {
       pname = "cleverhans";
       version = "master"; 
   
@@ -18,7 +18,7 @@
         sha256 = "sha256-ox7psBA0qqc9/J3HRNjzj1jXwU2I5iMVC2CVQnzALiY=";  
       };
 
-      propagatedBuildInputs = with pkgs.python3Packages; [
+      propagatedBuildInputs = with pkgs.python310Packages; [
         absl-py
         easydict
         joblib
@@ -29,6 +29,9 @@
         pytorch
         scipy
         six
+        tensorflow
+        tensorflow-probability
+        dm-tree
         torchvision
       ];
 
@@ -37,10 +40,13 @@
 
     mkDevShell = pkgs: pkgs.mkShell {
       buildInputs = [
-        pkgs.python3
-        pkgs.python3Packages.virtualenv
-        # pkgs.python3Packages.tensorflow
-        pkgs.python3Packages.pytorch
+        pkgs.python310
+        pkgs.python310Packages.virtualenv
+        pkgs.python310Packages.pytorch
+        pkgs.python310Packages.tensorflow
+        pkgs.python310Packages.tensorflow-probability
+        pkgs.python310Packages.dm-tree
+
         (mkCleverHans pkgs)
       ];
     };
