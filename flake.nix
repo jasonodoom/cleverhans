@@ -47,15 +47,9 @@
 
   in {
     packages.x86_64-linux.cleverhans = mkCleverHans nixpkgs.legacyPackages.x86_64-linux;
-    packages.aarch64-darwin.cleverhans = mkCleverHans nixpkgs.legacyPackages.aarch64-darwin;
-    packages.x86_64-darwin.cleverhans = mkCleverHans nixpkgs.legacyPackages.x86_64-darwin;
 
     devShells.x86_64-linux.default = mkDevShell nixpkgs.legacyPackages.x86_64-linux;
-    devShells.aarch64-darwin.default = mkDevShell nixpkgs.legacyPackages.aarch64-darwin;
-    devShells.x86_64-darwin.default = mkDevShell nixpkgs.legacyPackages.x86_64-darwin;
 
     defaultPackage.x86_64-linux = self.packages.x86_64-linux.cleverhans;
-    defaultPackage.aarch64-darwin = self.packages.aarch64-darwin.cleverhans;
-    defaultPackage.x86_64-darwin = self.packages.x86_64-darwin.cleverhans;
   };
 }
