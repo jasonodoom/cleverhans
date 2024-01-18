@@ -15,7 +15,7 @@
         owner = "jasonodoom";
         repo = "cleverhans";
         rev = "master";  
-        sha256 = "sha256-kSg7xfwhasmGYZ0YATRuIm4a/l2Hb+uHbDBr7PTT7gg=";  
+        sha256 = "sha256-ox7psBA0qqc9/J3HRNjzj1jXwU2I5iMVC2CVQnzALiY=";  
       };
 
       propagatedBuildInputs = with pkgs.python3Packages; [
