@@ -2,7 +2,7 @@
   description = "A flake for building and developing on the CleverHans library.";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-23.11"; 
+    nixpkgs.url = "nixpkgs/nixos-23.05"; 
   };
 
   outputs = { self, nixpkgs }: let
