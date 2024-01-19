@@ -20,6 +20,11 @@ Vagrant.configure("2") do |config|
     # Network configuration for VM2
     vm2.vm.network "private_network", ip: "192.168.57.10"
 
+    vm2.vm.provider "virtualbox" do |vb|
+      vb.memory = "4096"
+      vb.cpus = "2"
+    end
+
     # Provision VM2 with Nix, and Git for CleverHans
     vm2.vm.provision "shell", inline: <<-SHELL
       sudo apt-get update
