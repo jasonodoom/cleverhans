@@ -21,8 +21,8 @@ Vagrant.configure("2") do |config|
     vm2.vm.network "private_network", ip: "192.168.57.10"
 
     vm2.vm.provider "virtualbox" do |vb|
-      vb.memory = "4096"
-      vb.cpus = "2"
+      vb.memory = "10096"
+      vb.cpus = "4"
     end
 
     # Provision VM2 with Nix, and Git for CleverHans
