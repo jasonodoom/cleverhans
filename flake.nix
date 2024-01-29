@@ -46,6 +46,10 @@
         pkgs.python310Packages.tensorflow
         pkgs.python310Packages.tensorflow-probability
         pkgs.python310Packages.dm-tree
+        pkgs.python310Packages.xgboost
+        pkgs.python310Packages.scikit-learn
+        pkgs.python310Packages.pandas
+
 
         (mkCleverHans pkgs)
       ];
